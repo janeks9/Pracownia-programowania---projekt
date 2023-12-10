@@ -6,7 +6,7 @@
     <persistence-unit name="hibernate-dynamic" transaction-type="RESOURCE_LOCAL">
         <properties>
             <!-- Configuring JDBC properties -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://https://mysql.wmi.amu.edu.pl/s452376_pprog"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog"/>
             <property name="javax.persistence.jdbc.user" value="s452376"/>
             <property name="javax.persistence.jdbc.password" value="99031708874"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
