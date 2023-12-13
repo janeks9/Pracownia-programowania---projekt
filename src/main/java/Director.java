@@ -1,4 +1,5 @@
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -6,8 +7,8 @@ import java.util.List;
 
 public class Director {
 
-    @Id@GeneratedValue
-    @Column(name = "id")
+    @Id@GeneratedValue(generator = "gen")
+    @SequenceGenerator(name="gen", sequenceName = "director_seq")
     private int id;
 
     @Column(name = "imię", nullable = false)
@@ -64,7 +65,6 @@ public class Director {
     public void setCountry(String country) {
         this.country = country;
     }
-    @OneToMany
-    @JoinColumn(name = "Director_id", referencedColumnName = "id")
-    List<Film> films;
+    @OneToMany(mappedBy = "director")
+    List<Film> films = new ArrayList<>();
 }

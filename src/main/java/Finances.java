@@ -5,8 +5,8 @@ import javax.persistence.*;
 
 public class Finances {
 
-    @Id @GeneratedValue
-    @Column(name = "id")
+    @Id@GeneratedValue(generator = "gen")
+    @SequenceGenerator(name="gen", sequenceName = "finance_seq")
     private int id;
 
     @Column(name = "budżet", nullable = false)
@@ -43,5 +43,13 @@ public class Finances {
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Film_id", referencedColumnName = "id")
-    Film film;
+    private Film film;
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
 }

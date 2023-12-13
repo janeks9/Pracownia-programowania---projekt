@@ -1,12 +1,13 @@
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "Aktor")
+@Table(name = "AKTOR")
 
 public class Actor {
 
-    @Id@GeneratedValue
-    @Column(name = "id")
+    @Id@GeneratedValue(generator = "gen")
+    @SequenceGenerator(name="gen", sequenceName = "actor_seq")
     private int id;
 
     @Column(name = "imię", nullable = false)
@@ -63,4 +64,7 @@ public class Actor {
     public void setCountry(String country) {
         this.country = country;
     }
+
+    @ManyToMany(mappedBy = "actors")
+    List<Film> films;
 }

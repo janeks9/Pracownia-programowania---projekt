@@ -349,3 +349,1144 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 's452376_pprog.FINANSE' doesn
 	... 16 more
 2023-12-10 14:15:50 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2a8a4e0c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 2023-12-10 14:15:50 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 15:16:16 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 15:16:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 15:16:16 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 15:16:16 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 15:16:17 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 15:16:17 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 15:16:17 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 15:16:17 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 15:16:17 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 15:16:17 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 15:16:18 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 15:16:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1947596f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 15:16:19 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "drop table if exists FILM" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "drop table if exists FILM" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-10 15:16:19 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@529c2a9a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 15:16:19 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "create table FILM (id integer not null, data_premiery integer not null, długość integer, kraj_produkcji varchar(255), tytuł varchar(255) not null, Director_id integer, primary key (id)) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table FILM (id integer not null, data_premiery integer not null, długość integer, kraj_produkcji varchar(255), tytuł varchar(255) not null, Director_id integer, primary key (id)) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:439)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:423)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:314)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:166)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:135)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:156)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'FILM' already exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-10 15:16:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:20:04 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:20:04 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:20:04 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:20:05 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:20:05 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:20:05 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:20:05 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:20:05 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:20:05 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:20:06 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:20:06 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:20:07 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@136965e3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:20:07 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM drop foreign key FKotdi7wm0ku4bvgjjvg5o3outb" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM drop foreign key FKotdi7wm0ku4bvgjjvg5o3outb" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM' to './s452376_pprog/#sql2-9e6-7ddcaa' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:20:07 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FINANSE drop foreign key FKi49p7ki10cxnbe1qy172cyryc" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FINANSE drop foreign key FKi49p7ki10cxnbe1qy172cyryc" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FINANSE' to './s452376_pprog/#sql2-9e6-7ddcaa' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:20:07 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@574b7f4a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:20:08 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:22:52 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:22:52 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:22:52 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:22:52 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:22:53 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:22:53 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:22:53 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:22:53 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:22:53 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:22:53 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:23:19 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:23:19 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:23:19 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:23:20 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:23:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:23:20 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:23:20 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:23:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:23:20 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:23:20 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:24:19 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:24:19 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:24:19 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:24:20 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:24:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:24:20 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:24:20 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:24:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:24:20 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:24:20 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:24:21 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:24:22 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@53c6f96d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:24:22 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3e67f5f2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:24:23 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:39:11 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:39:12 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:39:12 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:39:12 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:39:12 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:39:12 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:39:12 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:39:12 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:39:12 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:39:13 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:39:13 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:39:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2c8c16c0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:39:14 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_AKTORZY drop foreign key FK437j9sqveqqvhp33w220825x6" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_AKTORZY drop foreign key FK437j9sqveqqvhp33w220825x6" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLSyntaxErrorException: Table 's452376_pprog.FILM_AKTORZY' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:39:14 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_AKTORZY drop foreign key FKcftmcmlxc18wogil08xgy7a9l" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_AKTORZY drop foreign key FKcftmcmlxc18wogil08xgy7a9l" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLSyntaxErrorException: Table 's452376_pprog.FILM_AKTORZY' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:39:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@697a34af] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:39:15 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:47:30 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:47:30 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:47:30 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:47:30 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:47:31 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:47:31 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:47:31 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:47:31 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:47:31 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:47:31 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:47:32 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:47:32 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@2c8c16c0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:47:33 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6920b0bc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:47:33 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:50:08 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:50:08 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:50:08 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:50:09 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:50:09 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:50:09 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:50:09 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:50:09 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:50:09 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:50:10 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:50:10 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:50:11 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@440e3ce6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:50:11 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_GATUNEK drop foreign key FK8l3o1lo8q56uofv9imen7yfoh" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_GATUNEK drop foreign key FK8l3o1lo8q56uofv9imen7yfoh" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLSyntaxErrorException: Table 's452376_pprog.FILM_GATUNEK' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:50:11 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_GATUNEK drop foreign key FKm37on26rdjkh0ajrn8vk0v3g4" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_GATUNEK drop foreign key FKm37on26rdjkh0ajrn8vk0v3g4" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at CreateModel.main(CreateModel.java:20)
+Caused by: java.sql.SQLSyntaxErrorException: Table 's452376_pprog.FILM_GATUNEK' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-10 16:50:12 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4784efd9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:50:12 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 16:50:28 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 16:50:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 16:50:28 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 16:50:29 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 16:50:29 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 16:50:29 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 16:50:29 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 16:50:29 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 16:50:29 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 16:50:29 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 16:50:30 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 16:50:31 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@440e3ce6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:50:31 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@17dd671f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 16:50:32 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:25:39 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:25:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:25:39 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:25:39 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:25:40 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:25:40 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:25:40 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:25:40 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:25:40 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:25:40 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:25:41 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:25:42 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7132a9dc] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:25:42 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@358ab600] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:25:43 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:37:24 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:37:24 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:37:24 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:37:24 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:37:25 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:37:25 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:37:25 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:37:25 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:37:25 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:37:25 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:37:26 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:37:26 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c723f2d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:37:27 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:37:28 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:48:55 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:48:55 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:48:55 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:48:55 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:48:56 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:48:56 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:48:56 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:48:56 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:48:56 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:48:56 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:48:57 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:48:58 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c723f2d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:48:59 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:48:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:53:15 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:53:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:53:16 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:53:16 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:53:16 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:53:16 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:53:16 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:53:16 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:53:16 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:53:17 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:53:17 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:53:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5c723f2d] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:53:19 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:53:20 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:57:06 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:57:06 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:57:06 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:57:06 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:57:06 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:57:06 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:57:06 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:57:06 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:57:06 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:57:07 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:57:07 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:57:08 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b27e8f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:57:09 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7d78f3d5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:57:10 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 20:58:28 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 20:58:28 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 20:58:29 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 20:58:29 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 20:58:29 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 20:58:29 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 20:58:29 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 20:58:29 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 20:58:29 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 20:58:30 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 20:58:30 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 20:58:31 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b27e8f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:58:32 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@354e7004] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 20:58:33 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:01:53 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:01:54 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:01:54 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:01:54 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:01:54 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:01:54 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:01:54 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:01:54 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:01:54 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:01:55 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:01:55 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:01:56 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b27e8f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:01:57 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@354e7004] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:01:58 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:05:20 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:05:21 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:05:21 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:05:21 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:05:21 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:05:21 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:05:21 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:05:21 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:05:21 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:05:22 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:05:22 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:05:23 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b27e8f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:05:24 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@354e7004] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:05:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:09:59 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:09:59 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:09:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:09:59 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:10:00 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:10:00 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:10:00 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:10:00 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:10:00 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:10:00 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:10:01 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:10:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7b27e8f4] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:10:03 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@354e7004] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:10:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:14:14 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:14:15 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:14:15 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:14:15 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:14:15 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:14:15 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:14:15 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:14:15 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:14:15 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:14:16 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:14:16 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:14:17 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@a96d56c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:14:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a6dc589] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:14:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:15:17 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:15:17 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:15:17 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:15:18 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:15:18 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:15:18 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:15:18 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:15:18 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:15:18 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:15:18 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:15:19 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:15:20 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@a96d56c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:15:21 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a6dc589] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:15:22 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:19:12 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:19:12 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:19:12 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:19:12 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:19:13 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:19:13 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:19:13 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:19:13 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:19:13 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:19:13 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:19:14 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:19:15 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:19:15 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c5228e7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:19:16 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-10 21:29:47 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-10 21:29:47 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-10 21:29:47 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-10 21:29:48 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-10 21:29:48 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-10 21:29:48 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-10 21:29:48 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-10 21:29:48 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-10 21:29:48 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-10 21:29:48 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-10 21:29:49 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-10 21:29:50 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:29:50 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c5228e7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-10 21:29:51 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:28:56 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:28:57 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:28:57 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:28:57 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:28:58 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:28:58 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:28:58 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:28:58 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:28:58 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:29:19 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:172)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:116)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:41)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:58)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:341)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:260)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:238)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:379)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:98)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:73)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:145)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:25)
+2023-12-12 15:29:19 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:29:19 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08S01
+2023-12-12 15:29:19 ERROR SqlExceptionHelper:142 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-12-12 15:29:47 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:29:47 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:29:47 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:29:48 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:29:48 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:29:48 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:29:48 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:29:48 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:29:48 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:30:09 WARN  JdbcEnvironmentInitiator:132 - HHH000342: Could not obtain connection to query metadata
+java.lang.IllegalStateException: Cannot get a connection as the driver manager is not properly initialized
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.getConnection(DriverManagerConnectionProviderImpl.java:172)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:51)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.convertSqlException(BasicConnectionCreator.java:116)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:41)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:58)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:341)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:260)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:238)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:379)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:98)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:73)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:145)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:176)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:25)
+2023-12-12 15:30:09 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:30:10 WARN  SqlExceptionHelper:137 - SQL Error: 0, SQLState: 08S01
+2023-12-12 15:30:10 ERROR SqlExceptionHelper:142 - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-12-12 15:31:21 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:31:22 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:31:22 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:31:22 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:31:22 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:31:22 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:31:22 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:31:22 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:31:22 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:31:23 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:31:24 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:31:24 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75120e58] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:31:25 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6732726] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:31:26 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:33:21 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:33:21 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:33:21 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:33:22 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:33:22 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:33:22 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:33:22 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:33:22 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:33:22 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:33:22 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:33:23 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:33:24 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:33:24 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c5228e7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:33:25 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:34:41 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:34:42 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:34:42 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:34:42 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:34:42 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:34:42 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:34:42 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:34:42 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:34:42 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:34:43 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:34:43 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:34:44 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@235d29d6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:34:45 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4c5228e7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:34:46 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:40:00 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:40:00 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:40:00 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:40:01 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:40:01 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:40:01 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:40:01 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:40:01 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:40:01 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:40:01 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:40:02 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:40:03 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a6dc589] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:40:03 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4190bc8a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:40:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:46:59 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:46:59 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:46:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:47:00 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:47:00 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:47:00 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:47:00 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:47:00 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:47:00 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:47:00 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:47:01 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:47:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c5ddccd] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:47:03 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@625a4ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:47:04 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:47:05 WARN  SqlExceptionHelper:137 - SQL Error: 1406, SQLState: 22001
+2023-12-12 15:47:05 ERROR SqlExceptionHelper:142 - Data truncation: Data too long for column 'data_premiery' at row 1
+2023-12-12 15:47:39 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 15:47:39 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 15:47:39 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 15:47:40 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 15:47:40 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 15:47:40 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 15:47:40 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 15:47:40 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 15:47:40 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 15:47:40 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 15:47:41 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 15:47:42 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6c5ddccd] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:47:42 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@625a4ff] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 15:47:43 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 15:47:44 WARN  SqlExceptionHelper:137 - SQL Error: 1406, SQLState: 22001
+2023-12-12 15:47:44 ERROR SqlExceptionHelper:142 - Data truncation: Data too long for column 'data_premiery' at row 1
+2023-12-12 16:01:19 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 16:01:19 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 16:01:19 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 16:01:20 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 16:01:20 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 16:01:20 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 16:01:20 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 16:01:20 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 16:01:20 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 16:01:21 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 16:01:21 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 16:01:22 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5b3bb1f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:01:23 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d266391] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:01:24 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 16:03:15 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 16:03:15 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 16:03:15 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 16:03:16 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 16:03:16 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 16:03:16 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 16:03:16 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 16:03:16 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 16:03:16 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 16:03:16 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 16:03:17 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 16:03:17 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5b3bb1f7] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:03:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4d266391] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:03:19 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-12 16:08:22 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-12 16:08:23 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-12 16:08:23 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-12 16:08:23 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-12 16:08:23 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-12 16:08:23 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-12 16:08:23 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-12 16:08:23 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-12 16:08:23 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-12 16:08:24 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-12 16:08:24 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-12 16:08:25 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1a6dc589] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:08:26 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4190bc8a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-12 16:08:27 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:40:01 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 12:40:01 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 12:40:01 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 12:40:02 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:40:02 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 12:40:02 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 12:40:02 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 12:40:02 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 12:40:02 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 12:40:03 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:40:04 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 12:40:06 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:40:07 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@503df2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:40:07 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:42:54 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 12:42:54 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 12:42:55 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 12:42:55 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:42:55 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 12:42:55 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 12:42:55 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 12:42:55 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 12:42:55 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 12:42:56 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:42:56 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 12:42:57 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:42:58 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@503df2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:42:59 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:44:49 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 12:44:49 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 12:44:49 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 12:44:49 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:44:50 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 12:44:50 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 12:44:50 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 12:44:50 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 12:44:50 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 12:44:50 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:44:51 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 12:44:51 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:44:52 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@503df2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:44:53 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:47:59 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 12:47:59 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 12:47:59 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 12:48:00 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:48:00 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 12:48:00 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 12:48:00 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 12:48:00 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 12:48:00 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 12:48:00 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:48:01 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 12:48:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_AKTORZY drop foreign key FKcoibwm2xbllm5xxl8ptpbq1sl" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_AKTORZY drop foreign key FKcoibwm2xbllm5xxl8ptpbq1sl" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM_AKTORZY' to './s452376_pprog/#sql2-9e6-7fbd73' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_AKTORZY drop foreign key FKb9ewetvn8lcnn3e3s8d1rbn2n" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_AKTORZY drop foreign key FKb9ewetvn8lcnn3e3s8d1rbn2n" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM_AKTORZY' to './s452376_pprog/#sql2-9e6-7fbd73' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_GATUNEK drop foreign key FK4786pwomj6gol1mvyvcg526jk" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_GATUNEK drop foreign key FK4786pwomj6gol1mvyvcg526jk" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM_GATUNEK' to './s452376_pprog/#sql2-9e6-7fbd73' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM_GATUNEK drop foreign key FKdp1lafyk54k73uowc3cudn31f" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM_GATUNEK drop foreign key FKdp1lafyk54k73uowc3cudn31f" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM_GATUNEK' to './s452376_pprog/#sql2-9e6-7fbd73' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "drop table if exists AKTOR" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "drop table if exists AKTOR" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "drop table if exists FILM" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "drop table if exists FILM" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:241)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-13 12:48:02 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@313f8301] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "create table AKTOR (id integer not null, narodowość varchar(255), data_urodzenia varchar(255), imię varchar(255) not null, nazwisko varchar(255) not null, primary key (id)) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table AKTOR (id integer not null, narodowość varchar(255), data_urodzenia varchar(255), imię varchar(255) not null, nazwisko varchar(255) not null, primary key (id)) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:439)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:423)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:314)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:166)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:135)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:156)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'AKTOR' already exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-13 12:48:02 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "create table FILM (id integer not null, data_premiery varchar(255) not null, długość integer, kraj_produkcji varchar(255), tytuł varchar(255) not null, Reżyser_id integer, primary key (id)) engine=InnoDB" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "create table FILM (id integer not null, data_premiery varchar(255) not null, długość integer, kraj_produkcji varchar(255), tytuł varchar(255) not null, Reżyser_id integer, primary key (id)) engine=InnoDB" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:439)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:423)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:314)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:166)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:135)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:156)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLSyntaxErrorException: Table 'FILM' already exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-13 12:48:03 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM add constraint FKotdi7wm0ku4bvgjjvg5o3outb foreign key (Reżyser_id) references REŻYSER (id)" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM add constraint FKotdi7wm0ku4bvgjjvg5o3outb foreign key (Reżyser_id) references REŻYSER (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:439)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlStrings(SchemaCreatorImpl.java:423)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:374)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:166)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:135)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:121)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:156)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`s452376_pprog`.`#sql-9e6_7fbd73`, CONSTRAINT `FKotdi7wm0ku4bvgjjvg5o3outb` FOREIGN KEY (`Reżyser_id`) REFERENCES `REŻYSER` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 15 more
+2023-12-13 12:48:03 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 12:48:04 WARN  SqlExceptionHelper:137 - SQL Error: 1062, SQLState: 23000
+2023-12-13 12:48:04 ERROR SqlExceptionHelper:142 - Duplicate entry '1' for key 'PRIMARY'
+2023-12-13 12:49:22 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 12:49:23 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 12:49:23 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 12:49:23 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 12:49:23 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 12:49:23 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 12:49:23 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 12:49:23 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 12:49:23 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 12:49:24 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 12:49:24 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 12:49:25 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:49:25 WARN  ExceptionHandlerLoggedImpl:27 - GenerationTarget encountered exception accepting command : Error executing DDL "alter table FILM drop foreign key FKotdi7wm0ku4bvgjjvg5o3outb" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table FILM drop foreign key FKotdi7wm0ku4bvgjjvg5o3outb" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlString(SchemaDropperImpl.java:375)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applySqlStrings(SchemaDropperImpl.java:359)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.applyConstraintDropping(SchemaDropperImpl.java:331)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.dropFromMetadata(SchemaDropperImpl.java:230)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.performDrop(SchemaDropperImpl.java:154)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:126)
+	at org.hibernate.tool.schema.internal.SchemaDropperImpl.doDrop(SchemaDropperImpl.java:112)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:145)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:318)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:468)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at Sample.main(Sample.java:27)
+Caused by: java.sql.SQLException: Error on rename of './s452376_pprog/FILM' to './s452376_pprog/#sql2-9e6-7fbd9f' (errno: 152)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 16 more
+2023-12-13 12:49:26 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@49d831c2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 12:49:27 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 13:10:16 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 13:10:16 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 13:10:16 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 13:10:17 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 13:10:17 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 13:10:17 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 13:10:17 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 13:10:17 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 13:10:17 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 13:10:17 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 13:10:18 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 13:10:18 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:10:19 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@503df2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:10:20 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 13:12:43 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 13:12:43 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 13:12:43 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 13:12:43 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 13:12:44 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 13:12:44 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 13:12:44 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 13:12:44 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 13:12:44 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 13:12:44 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 13:12:45 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 13:12:45 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:12:46 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@503df2d0] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:12:47 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 13:17:11 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 13:17:11 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 13:17:11 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 13:17:12 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 13:17:12 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 13:17:12 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 13:17:12 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 13:17:12 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 13:17:12 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 13:17:12 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 13:17:13 WARN  InFlightMetadataCollectorImpl:498 - HHH000069: Duplicate generator name gen
+2023-12-13 13:17:13 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 13:17:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:17:14 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@27755487] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:17:15 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 13:18:50 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2023-12-13 13:18:50 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-dynamic]
+2023-12-13 13:18:50 INFO  Version:44 - HHH000412: Hibernate ORM core version 5.4.33.Final
+2023-12-13 13:18:50 INFO  Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 13:18:51 WARN  pooling:72 - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2023-12-13 13:18:51 INFO  pooling:115 - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog]
+2023-12-13 13:18:51 INFO  pooling:124 - HHH10001001: Connection properties: {password=****, user=s452376}
+2023-12-13 13:18:51 INFO  pooling:129 - HHH10001003: Autocommit mode: false
+2023-12-13 13:18:51 INFO  DriverManagerConnectionProviderImpl:259 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2023-12-13 13:18:51 INFO  Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 13:18:52 WARN  InFlightMetadataCollectorImpl:498 - HHH000069: Duplicate generator name gen
+2023-12-13 13:18:52 WARN  InFlightMetadataCollectorImpl:498 - HHH000069: Duplicate generator name gen
+2023-12-13 13:18:52 WARN  InFlightMetadataCollectorImpl:498 - HHH000069: Duplicate generator name gen
+2023-12-13 13:18:52 INFO  Version:21 - HV000001: Hibernate Validator 6.2.5.Final
+2023-12-13 13:18:53 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@514de325] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:18:53 INFO  access:47 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@27755487] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2023-12-13 13:18:55 INFO  JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
