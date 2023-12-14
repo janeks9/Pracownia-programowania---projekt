@@ -1,9 +1,8 @@
+import project.Entities.*;
 import org.hibernate.Session;
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -153,7 +152,6 @@ public class Sample {
                 dir.setSurname("Tarantino");
                 dir.setCountry("USA");
                 dir.setDateOfBirth("1963");
-                dir.films.add(createFilm());
                 return dir;
             }
             private static Director createDirector2(){
@@ -162,7 +160,6 @@ public class Sample {
                 dir.setSurname("Scorsese");
                 dir.setCountry("USA");
                 dir.setDateOfBirth("1942");
-                dir.films.add(createFilm());
                 return dir;
             }
             private static Director createDirector3(){
@@ -171,7 +168,6 @@ public class Sample {
                 dir.setSurname("Nolan");
                 dir.setCountry("Wielka Brytania");
                 dir.setDateOfBirth("1970");
-                dir.films.add(createFilm());
                 return dir;
             }
 

@@ -1,6 +1,4 @@
-import net.bytebuddy.asm.Advice;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
+package project.Entities;
 
 import javax.persistence.*;
 import java.util.List;
@@ -27,6 +25,13 @@ public class Film {
     private String krajProdukcji;
 
     public Film(){}
+
+    public Film(String tytul, String dataPremiery, int dlugosc, String krajProdukcji) {
+        this.tytul = tytul;
+        this.dataPremiery = dataPremiery;
+        this.dlugosc = dlugosc;
+        this.krajProdukcji = krajProdukcji;
+    }
 
     public int getId() {
         return id;
@@ -74,7 +79,7 @@ public class Film {
 
     @OneToOne(mappedBy = "film")
     Finances finances;
-
+    
     @ManyToMany
     @JoinTable(
             name = "FILM_AKTORZY",

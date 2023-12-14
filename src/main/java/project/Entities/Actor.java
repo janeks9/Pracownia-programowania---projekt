@@ -1,14 +1,15 @@
+package project.Entities;
+
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "REŻYSER")
+@Table(name = "AKTOR")
 
-public class Director {
+public class Actor {
 
     @Id@GeneratedValue(generator = "gen")
-    @SequenceGenerator(name="gen", sequenceName = "director_seq")
+    @SequenceGenerator(name="gen", sequenceName = "actor_seq")
     private int id;
 
     @Column(name = "imię", nullable = false)
@@ -23,8 +24,14 @@ public class Director {
     @Column(name = "narodowość")
     private String country;
 
-    public Director(){}
+    public Actor(){}
 
+    public Actor(String name, String surname, String dateOfBirth, String country) {
+        this.name = name;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.country = country;
+    }
 
     public int getId() {
         return id;
@@ -65,6 +72,7 @@ public class Director {
     public void setCountry(String country) {
         this.country = country;
     }
-    @OneToMany(mappedBy = "director")
-    List<Film> films = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "actors")
+    List<Film> films;
 }

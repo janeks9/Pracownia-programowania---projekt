@@ -1,3 +1,5 @@
+package project.Entities;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,11 @@ public class Finances {
     private int profit;
 
     public Finances(){}
+
+    public Finances(int budget, int profit) {
+        this.budget = budget;
+        this.profit = profit;
+    }
 
     public int getId() {
         return id;
