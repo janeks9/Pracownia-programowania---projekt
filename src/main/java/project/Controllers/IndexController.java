@@ -4,6 +4,7 @@ import project.Entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import project.Services.FilmService;
 
 /**
  * Homepage controller.
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
 
     @Autowired
-    //private ProductService productService;
+    private FilmService filmService;
 
     @GetMapping(value = "")
     String index() {
@@ -63,6 +64,7 @@ public class IndexController {
 
         finances1.setFilm(film1);
 
+        filmService.saveFilm(film1);
 
         return "Model Generated";
     }
