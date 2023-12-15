@@ -1,5 +1,6 @@
-package project.Entities;
+package com.project.spring.entities;
 
+import org.joda.time.LocalDate;
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,9 +15,9 @@ public class Film {
     @Column(name = "tytuł", nullable = false)
     private String tytul;
 
-    //JodaTime
+    //JodaTime later
     @Column(name = "data_premiery", nullable = false)
-    private String dataPremiery;
+    private LocalDate dataPremiery;
 
     @Column(name = "długość")
     private int dlugosc;
@@ -26,7 +27,7 @@ public class Film {
 
     public Film(){}
 
-    public Film(String tytul, String dataPremiery, int dlugosc, String krajProdukcji) {
+    public Film(String tytul, LocalDate dataPremiery, int dlugosc, String krajProdukcji) {
         this.tytul = tytul;
         this.dataPremiery = dataPremiery;
         this.dlugosc = dlugosc;
@@ -49,11 +50,11 @@ public class Film {
         this.tytul = tytul;
     }
 
-    public String getDataPremiery() {
+    public LocalDate getDataPremiery() {
         return dataPremiery;
     }
 
-    public void setDataPremiery(String dataPremiery) {
+    public void setDataPremiery(LocalDate dataPremiery) {
         this.dataPremiery = dataPremiery;
     }
 

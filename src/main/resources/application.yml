@@ -4,14 +4,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect;
-        ddl-auto: update
+        ddl-auto: create
     show-sql: true
   database:
     driverClassName: com.mysql.cj.jdbc.Driver
   datasource:
     url: jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog
     username: s452376
-    password: 99031708874
+    password: pp12345
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

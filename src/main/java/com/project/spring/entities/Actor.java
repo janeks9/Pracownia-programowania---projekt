@@ -1,5 +1,6 @@
-package project.Entities;
+package com.project.spring.entities;
 
+import org.joda.time.LocalDate;
 import javax.persistence.*;
 import java.util.List;
 
@@ -19,14 +20,14 @@ public class Actor {
     private String surname;
 
     @Column(name = "data_urodzenia")
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "narodowość")
     private String country;
 
     public Actor(){}
 
-    public Actor(String name, String surname, String dateOfBirth, String country) {
+    public Actor(String name, String surname, LocalDate dateOfBirth, String country) {
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = dateOfBirth;
@@ -57,11 +58,11 @@ public class Actor {
         this.surname = surname;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

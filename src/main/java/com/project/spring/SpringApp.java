@@ -1,4 +1,4 @@
-package project;
+package com.project.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableJpaRepositories("project.Repositories")
+@EnableJpaRepositories("com.project.spring.repositories")
 @EnableSwagger2
 public class SpringApp extends SpringBootServletInitializer {
     public static void main(String[] args){
@@ -21,7 +21,7 @@ public class SpringApp extends SpringBootServletInitializer {
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.basePackage("project.Controllers"))
+                .select().apis(RequestHandlerSelectors.basePackage("com.project.spring.controllers"))
                 .build();
     }
 }

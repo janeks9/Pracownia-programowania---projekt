@@ -1,9 +1,9 @@
-package project.Services;
+package com.project.spring.services;
 
+import com.project.spring.entities.Film;
+import com.project.spring.repositories.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import project.Entities.Film;
-import project.Repositories.FilmRepository;
 
 @Service
 public class FilmServiceImpl implements FilmService{
