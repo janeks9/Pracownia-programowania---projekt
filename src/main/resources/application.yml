@@ -3,15 +3,15 @@ spring:
   jpa:
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect;
+        dialect: org.hibernate.dialect.HSQLDialect
         ddl-auto: create
     show-sql: true
   database:
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: org.hsqldb.jdbcDriver
   datasource:
-    url: jdbc:mysql://mysql.wmi.amu.edu.pl/s452376_pprog
-    username: s452376
-    password: pp12345
+    url: jdbc:hsqldb:mem:spring
+    username: sa
+    password:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
