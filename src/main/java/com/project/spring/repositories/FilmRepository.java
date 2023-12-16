@@ -4,6 +4,6 @@ import com.project.spring.entities.Film;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FilmRepository extends CrudRepository<Film, Long> {
+public interface FilmRepository extends CrudRepository<Film, Integer> {
 
 }

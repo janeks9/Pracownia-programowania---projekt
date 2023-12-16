@@ -15,7 +15,6 @@ public class Film {
     @Column(name = "tytuł", nullable = false)
     private String tytul;
 
-    //JodaTime later
     @Column(name = "data_premiery", nullable = false)
     private LocalDate dataPremiery;
 
