@@ -56,30 +56,30 @@ public class IndexController {
 
         //Finances finances1 = new Finances();
 
-        directorService.saveDirector(dir1);
-        directorService.saveDirector(dir2);
-        directorService.saveDirector(dir3);
-
         film1.setDirector(dir1);
-        /*film1.getActors().add(actor1);
-        film1.getGenres().add(genre1);*/
+        film1.getActors().add(actor1);
+        film1.getGenres().add(genre1);
 
         film2.setDirector(dir1);
-       /* film2.getGenres().add(genre2);*/
+        film2.getGenres().add(genre2);
 
         film3.setDirector(dir2);
-        /*film3.getActors().add(actor2);
+        film3.getActors().add(actor2);
         film3.getActors().add(actor4);
-        film3.getGenres().add(genre3);*/
+        film3.getGenres().add(genre3);
 
         film4.setDirector(dir3);
-        /*film4.getActors().add(actor3);
-        film4.getGenres().add(genre4);*/
+        film4.getActors().add(actor3);
+        film4.getGenres().add(genre4);
 
         filmService.saveFilm(film1);
         filmService.saveFilm(film2);
         filmService.saveFilm(film3);
         filmService.saveFilm(film4);
+
+        directorService.saveDirector(dir1);
+        directorService.saveDirector(dir2);
+        directorService.saveDirector(dir3);
 
         actorService.saveActor(actor1);
         actorService.saveActor(actor2);

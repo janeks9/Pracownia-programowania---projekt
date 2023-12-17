@@ -5,6 +5,8 @@ import com.project.spring.repositories.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GenreServiceImpl implements GenreService{
 
@@ -13,4 +15,9 @@ public class GenreServiceImpl implements GenreService{
 
     @Override
     public Genre saveGenre(Genre genre){return genreRepository.save(genre);}
+
+    @Override
+    public List<Genre> getById(int id){
+        return genreRepository.findById(id);
+    }
 }

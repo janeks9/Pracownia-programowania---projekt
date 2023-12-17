@@ -2,6 +2,7 @@ package com.project.spring.entities;
 
 import org.joda.time.LocalDate;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,8 +13,8 @@ public class Film {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "tytuł", nullable = false)
-    private String tytul;
+    @Column(name = "title", nullable = false)
+    private String title;
 
     @Column(name = "data_premiery", nullable = false)
     private LocalDate dataPremiery;
@@ -26,8 +27,8 @@ public class Film {
 
     public Film(){}
 
-    public Film(String tytul, LocalDate dataPremiery, int dlugosc, String krajProdukcji) {
-        this.tytul = tytul;
+    public Film(String title, LocalDate dataPremiery, int dlugosc, String krajProdukcji) {
+        this.title = title;
         this.dataPremiery = dataPremiery;
         this.dlugosc = dlugosc;
         this.krajProdukcji = krajProdukcji;
@@ -41,12 +42,12 @@ public class Film {
         this.id = id;
     }
 
-    public String getTytul() {
-        return tytul;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTytul(String tytul) {
-        this.tytul = tytul;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public LocalDate getDataPremiery() {
@@ -73,28 +74,28 @@ public class Film {
         this.krajProdukcji = krajProdukcji;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Reżyser_id", referencedColumnName = "id")
     private Director director;
 
     @OneToOne(mappedBy = "film")
     Finances finances;
     
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "FILM_AKTORZY",
             joinColumns = @JoinColumn(name = "Film_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "Aktor_id", referencedColumnName = "id")
     )
-    private List<Actor> actors;
+    private List<Actor> actors = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "FILM_GATUNEK",
             joinColumns = @JoinColumn(name = "Film_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "Gatunek_id", referencedColumnName = "id")
     )
-    private List<Genre> genres;
+    private List<Genre> genres = new ArrayList<>();
 
     public Director getDirector() {
         return director;

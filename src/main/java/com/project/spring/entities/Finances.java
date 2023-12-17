@@ -48,7 +48,7 @@ public class Finances {
         this.profit = profit;
     }
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Film_id", referencedColumnName = "id")
     private Film film;
 
