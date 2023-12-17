@@ -21,4 +21,20 @@ public class DirectorServiceImpl implements DirectorService{
     public List<Director> getBySurname(String surname){
         return directorRepository.findBySurname(surname);
     }
+
+    @Override
+    public Iterable<Director> showAllDirectors(){return directorRepository.findAll();}
+
+    @Override
+    public void deleteDirector(Integer id){
+        directorRepository.deleteById(id);
+    }
+
+    @Override
+    public Boolean checkIfExists(Integer id) {
+        if (directorRepository.existsById(id)) {
+            return true;
+        } else
+            return false;
+    }
 }

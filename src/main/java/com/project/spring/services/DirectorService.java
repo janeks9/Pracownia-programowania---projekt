@@ -8,4 +8,10 @@ public interface DirectorService {
     Director saveDirector(Director director);
 
     List<Director> getBySurname(String surname);
+
+    Iterable<Director> showAllDirectors();
+
+    void deleteDirector(Integer id);
+    Boolean checkIfExists(Integer id);
+
 }

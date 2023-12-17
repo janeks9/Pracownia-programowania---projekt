@@ -4,8 +4,7 @@ import com.project.spring.entities.Genre;
 import com.project.spring.repositories.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GenreServiceImpl implements GenreService{
@@ -17,7 +16,25 @@ public class GenreServiceImpl implements GenreService{
     public Genre saveGenre(Genre genre){return genreRepository.save(genre);}
 
     @Override
-    public List<Genre> getById(int id){
+    public Optional<Genre> getById(Integer id){
         return genreRepository.findById(id);
+    }
+
+    @Override
+    public Iterable<Genre> showAllGenres(){
+        return genreRepository.findAll();
+    }
+
+    @Override
+    public void deleteGenre(Integer id){
+        genreRepository.deleteById(id);
+    }
+
+    @Override
+    public Boolean checkIfExists(Integer id) {
+        if (genreRepository.existsById(id)) {
+            return true;
+        } else
+            return false;
     }
 }

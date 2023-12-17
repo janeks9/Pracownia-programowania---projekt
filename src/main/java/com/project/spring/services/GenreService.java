@@ -1,9 +1,16 @@
 package com.project.spring.services;
 
 import com.project.spring.entities.Genre;
-import java.util.List;
+
+import java.util.Optional;
 
 public interface GenreService {
     Genre saveGenre(Genre genre);
-    List<Genre> getById(int id);
+    Optional<Genre> getById(Integer id);
+
+    Iterable<Genre> showAllGenres();
+
+    void deleteGenre(Integer id);
+
+    Boolean checkIfExists(Integer id);
 }
