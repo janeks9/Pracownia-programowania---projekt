@@ -17,11 +17,6 @@ public class FilmController {
     @Autowired
     private FilmService filmService;
 
-    @GetMapping(value = "/{title}")
-    public List<Film> getByTitle(@PathVariable String title) {
-        return filmService.getByTitle(title);
-    }
-
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Film> showAll(){
         return filmService.showAllFilms();
@@ -54,5 +49,13 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
     }
+    @GetMapping(value = "/long", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Film> longFilms(){
+        return filmService.longFilms();
+    }
 
+    @GetMapping(value = "/byTitle/{title}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Film> getByTitle(@PathVariable String title){
+        return filmService.getByTitle(title);
+    }
 }

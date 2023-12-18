@@ -2,6 +2,7 @@ package com.project.spring.controllers;
 
 import com.project.spring.entities.Actor;
 import com.project.spring.services.ActorService;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -9,7 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import springfox.documentation.annotations.ApiIgnore;
+
+import java.security.PublicKey;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/actor")
@@ -22,10 +26,6 @@ public class ActorController {
         return actorService.getBySurname(surname);
     }
 
-    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Actor> showAll(){
-        return actorService.showAllActors();
-    }
 
     @PostMapping(value = "/add")
     public ResponseEntity<Actor> create(@RequestBody Actor actor){
@@ -53,6 +53,11 @@ public class ActorController {
             actorService.saveActor(actor);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
+    }
+
+    @GetMapping(value = "/all/{page}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Actor> list(@PathVariable("page")Integer pageNr, @RequestParam(value = "size", required = false)Optional<Integer> howMany){
+        return actorService.getAll(pageNr, howMany.orElse(1));
     }
 
 }

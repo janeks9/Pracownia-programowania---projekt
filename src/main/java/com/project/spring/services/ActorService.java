@@ -13,4 +13,6 @@ public interface ActorService {
     void deleteActor(Integer id);
 
     Boolean checkIfExists(Integer id);
+
+    Iterable<Actor> getAll(Integer pageNr, Integer howMany);
 }

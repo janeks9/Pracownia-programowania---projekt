@@ -3,6 +3,7 @@ package com.project.spring.services;
 import com.project.spring.entities.Actor;
 import com.project.spring.repositories.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -35,6 +36,11 @@ public class ActorServiceImpl implements ActorService{
             return true;
         } else
             return false;
+    }
+
+    @Override
+    public Iterable<Actor> getAll(Integer pageNr, Integer howMany){
+        return actorRepository.getAll(PageRequest.of(pageNr, howMany));
     }
 
 }

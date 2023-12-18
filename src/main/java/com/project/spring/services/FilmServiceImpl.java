@@ -18,11 +18,6 @@ public class FilmServiceImpl implements FilmService{
     }
 
     @Override
-    public List<Film> getByTitle(String title){
-        return filmRepository.findByTitle(title);
-    }
-
-    @Override
     public Iterable<Film> showAllFilms(){
         return filmRepository.findAll();
     }
@@ -38,5 +33,15 @@ public class FilmServiceImpl implements FilmService{
             return true;
         } else
             return false;
+    }
+
+    @Override
+    public List<Film> longFilms(){
+        return filmRepository.longFilms();
+    }
+
+    @Override
+    public  List<Film> getByTitle(String title){
+        return filmRepository.getByTitle(title);
     }
 }
