@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Director {
 
-    @Id@GeneratedValue(generator = "gen")
+    @Id@GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen", sequenceName = "director_seq")
     private int id;
 

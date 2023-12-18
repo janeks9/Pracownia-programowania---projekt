@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Actor {
 
-    @Id@GeneratedValue(generator = "gen")
+    @Id@GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen", sequenceName = "actor_seq")
     private int id;
 

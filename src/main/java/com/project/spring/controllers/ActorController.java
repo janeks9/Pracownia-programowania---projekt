@@ -2,7 +2,6 @@ package com.project.spring.controllers;
 
 import com.project.spring.entities.Actor;
 import com.project.spring.services.ActorService;
-import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 import springfox.documentation.annotations.ApiIgnore;
-
-import java.security.PublicKey;
 import java.util.List;
 import java.util.Optional;
 

@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "FILM")
 public class Film {
 
-    @Id@GeneratedValue
+    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -74,7 +74,7 @@ public class Film {
         this.krajProdukcji = krajProdukcji;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "Reżyser_id", referencedColumnName = "id")
     private Director director;
 

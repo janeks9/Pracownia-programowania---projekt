@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 public class Finances {
 
-    @Id@GeneratedValue(generator = "gen")
+    @Id@GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
     @SequenceGenerator(name="gen", sequenceName = "finance_seq")
     private int id;
 

@@ -54,11 +54,13 @@ public class IndexController {
         Genre genre3 = new Genre("Biograficzny");
         Genre genre4 = new Genre("Science-fiction");
 
-        //Finances finances1 = new Finances();
+        Finances finances1 = new Finances(8500000, 213900000);
 
         film1.setDirector(dir1);
         film1.getActors().add(actor1);
         film1.getGenres().add(genre1);
+
+        finances1.setFilm(film1);
 
         film2.setDirector(dir1);
         film2.getGenres().add(genre2);
@@ -91,7 +93,7 @@ public class IndexController {
         genreService.saveGenre(genre3);
         genreService.saveGenre(genre4);
 
-        //financesService.saveFinances(finances1);
+        financesService.saveFinances(finances1);
 
         return "Model Generated";
     }
