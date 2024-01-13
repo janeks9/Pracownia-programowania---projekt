@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Genre {
 
-    @Id@GeneratedValue(generator = "gen", strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name="gen", sequenceName = "genre_seq")
+    @Id@GeneratedValue(generator = "gen2", strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="gen2", sequenceName = "genre_seq")
     private int id;
 
     @Column(name = "gatunek", nullable = false)
